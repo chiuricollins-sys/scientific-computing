@@ -24,8 +24,6 @@ Determinant: 3.000000000000001
 ```
 
 ## Parameter change
-I made two changes, one after the other.
-
 **Change 1: angle from 45° to 90°**
 ```
 Transformation matrix:
@@ -38,9 +36,9 @@ Transformed points:
  [-1.50000000e+00  9.18485099e-17]]
 Determinant: 2.9999999999999996
 ```
-The square is now turned a quarter turn, with corners at about (0, 0), (0, 2), (-1.5, 2) and (-1.5, 0). The values like `1.2e-16` are floating-point rounding for what should be exact zeros (the same effect as in Task 4). The determinant is still 3, because rotation does not change area.
+The square is turned a quarter turn, with corners at about (0, 0), (0, 2), (-1.5, 2) and (-1.5, 0). Values like `1.2e-16` are floating-point rounding for what should be exact zeros (the same effect as in Task 4). The determinant is still 3, because rotation does not change area.
 
-**Change 2: x scale from 2.0 to 3.0** (the angle was still 90° during this run)
+**Change 2: x scale from 2.0 to 3.0** (the angle was still 90° in this run)
 ```
 Transformation matrix:
  [[ 1.83697020e-16 -1.50000000e+00]
@@ -64,19 +62,48 @@ The determinant is the area scaling factor. A rotation has a determinant of 1, s
 
 **Output (30°, scale 1.2 and 0.8):**
 ```
-(paste your output here)
+Original corners:
+ [[  0.   0.]
+ [100.   0.]
+ [100.  50.]
+ [  0.  50.]]
+Transformed corners:
+ [[  0.           0.        ]
+ [103.92304845  60.        ]
+ [ 83.92304845  94.64101615]
+ [-20.          34.64101615]]
+Determinant: 0.9600000000000001
+Original area: 5000.0
+New area: 4800.000000000001
+Original area x determinant: 4800.0
 ```
 
 **Parameter change 1: angle from 30° to 60°**
 ```
-(paste your output here)
+Transformed corners:
+ [[  0.           0.        ]
+ [ 60.         103.92304845]
+ [ 25.35898385 123.92304845]
+ [-34.64101615  20.        ]]
+Determinant: 0.9600000000000001
+Original area: 5000.0
+New area: 4800.0
+Original area x determinant: 4800.0
 ```
-(Explain: the corners move, but the area stays the same, because rotation does not change area.)
+The corners move, but the area stays 4800, because rotation does not change area.
 
-**Parameter change 2: scale 1.0 and 1.0 (30°)**
+**Parameter change 2: scale 1.0 and 1.0 (angle 30°)**
 ```
-(paste your output here)
+Transformed corners:
+ [[  0.           0.        ]
+ [ 86.60254038  50.        ]
+ [ 61.60254038  93.30127019]
+ [-25.          43.30127019]]
+Determinant: 1.0
+Original area: 5000.0
+New area: 5000.0
+Original area x determinant: 5000.0
 ```
-(Explain: with no scaling it is a pure rotation, so the determinant is 1 and the area is the original 5000 m².)
+With no scaling it is a pure rotation, so the determinant is 1 and the area is the original 5000 m².
 
-**Interpretation:** the last line of the output, "Original area x determinant", should equal the new area. That shows the determinant really is the area factor. (Say whether the plot became bigger or smaller, and what the determinant of about 0.96 means for the land area on the map.)
+**Interpretation:** "Original area x determinant" (4800) equals the new area (4800), which shows the determinant is the area scaling factor. The determinant of 0.96 means the plot shrinks to 96% of its area on the distorted map: 5000 m² becomes 4800 m².
