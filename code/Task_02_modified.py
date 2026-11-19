@@ -8,7 +8,7 @@ greenhouse_c = np.array([
     22.0, 20.0, 18.5, 17.5, 16.8, 16.2
 ])
 
-limit_c = 30.0  # crops stress above this
+limit_c = 32.0  # crops stress above this
 
 too_hot = greenhouse_c > limit_c        # True/False for each hour
 hours_too_hot = too_hot.sum()
