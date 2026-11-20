@@ -38,7 +38,7 @@ The average demand is the same, but a wider spread means more extreme demand val
 ## Meaning of the output
 In about 10.6% of the simulated scenarios the demand exceeds the capacity of 1000, so the server is overloaded roughly 1 time in 10. The average demand is 850, below the capacity, but the random variation sometimes pushes it above. The estimate agrees with the theoretical probability for this normal distribution (about 10.56%).
 
-**Graph:** it shows the running estimate against the number of simulations on a log scale. With only a few simulations the estimate swings widely, and as the number of simulations grows it settles near 10.6%. This is the main idea of Monte Carlo methods: the more random samples, the closer the estimate gets to the true probability.
+**Graph:** it shows the running estimate against the number of simulations on a log scale. For the first 30 or so simulations the estimate is 0%, because no overloads have happened yet. It then jumps to about 3% and bounces around, climbs to about 10% by a few hundred simulations, wobbles between roughly 9.5% and 11%, and settles near 10.6% by 100,000 simulations. This is the main idea of Monte Carlo methods: the more random samples, the closer the estimate gets to the true probability.
 
 ## New case: how often a clinic is overwhelmed
 **Assumptions:** a clinic can treat 60 patients a day. The number of patients per day is random, following a Poisson distribution with a mean of 48. These numbers are assumed. The program simulates 100,000 days and compares the result with the exact Poisson probability. The code is in `code/Task_20_modified.py`.
