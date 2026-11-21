@@ -1,6 +1,6 @@
 # BIT 2118 Scientific Computing: Group 10 Work
 
-**Student:** Louis Wanyoike, BSCCS/2024/52266
+**Student:** Michael Collins Muruo, BSCCS/2024/58140
 
 
 Each task has the lecturer's program in `code/`, my modified real-world version, and a write-up in `docs/` (inputs and operation, a parameter change, the meaning of the output, and a new case).
